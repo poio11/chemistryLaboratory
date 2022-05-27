@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Reacţia de substituţie </title>
+	
+	<link rel="shortcut icon" href="favicon.png" sizes="128x128">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	
+	<style>
+	
+	* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+}
+.wrapper {
+	width: 1170px;
+	margin: 0 auto;
+}
+header {
+	height: 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+}
+.logo {
+	width: 30%;
+	float: left;
+	line-height: 100px;
+}
+.logo a {
+	text-decoration: none;
+	font-size: 20px;
+	font-family: poppins;
+	color: #fff;
+	letter-spacing: 5px;
+}
+nav {
+	float: right;
+	line-height: 100px;
+}
+nav a {
+	text-decoration: none;
+	font-family: poppins;
+	letter-spacing: 4px;
+	font-size: 15px;
+	margin: 0 10px;
+	color: #fff;
+}
+
+.drop_down{
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  background: #262626;
+  width: 250px;
+  line-height: 40px;
+  padding: 8px 25px;
+  border-radius: 5px;
+}
+nav label{
+  letter-spacing: 4px;
+  font-size: 15px;
+  margin: 0 10px;
+  color: #fff;
+  font-family: poppins;
+  font-weight: 400;
+  display: inline;
+  cursor: pointer;
+}
+.button span{
+  float: right;
+  line-height: 40px;
+  transition: 0.5s;
+}
+.button span.rotate{
+  transform: rotate(-180deg);
+}
+nav ul{
+  position: absolute;
+  background: #262626;
+  list-style: none;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  display: none;
+}
+[id^=btn]:checked + ul{
+  display: block;
+}
+nav .menu:before{
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  background: #262626;
+  right: 20px;
+  top: -10px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+nav ul li{
+  line-height: 40px;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+nav ul li label{
+  font-size: 18px;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+}
+nav ul li a:hover,
+nav ul li label:hover{
+  color: orange;
+}
+input{
+  display: none;
+}
+
+.banner-area {
+	width: 100%;
+	height: 500px;
+	position: fixed;
+	top: 100px;
+	background-image: url(reactSubst4.gif);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+.banner-area h2 {
+	padding-top: 8%;
+	font-size: 70px;
+	font-family: poppins;
+	text-transform: uppercase;
+	color: #fff;
+}
+.content-area {
+	width: 100%;
+	position: relative;
+	top: 450px;
+	background: #ebebeb;
+	height: 1000px;
+}
+.content-area h2 {
+	font-family: poppins;
+	letter-spacing: 4px;
+	padding-top: 30px;
+	font-size: 40px;
+	margin: 0;
+}
+.content-area p {
+	padding: 2% 0px;
+	font-family: poppins;
+	line-height: 30px;
+}
+
+</style>
+	
+	
+</head>
+<body>
+	<div class="box-area">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+					<a href="Home.html">Laborator de buzunar</a>
+				</div>
+				<nav>
+					<a href="vase_ustensile.html">Instrumente de laborator</a>
+					<a href="tabel periodic.html">Tabel periodic</a> 
+				</nav>
+				<nav class = "drop_down">
+                  <label for="btn" class="button"> Tipuri de reacţii
+                    <span class="fas fa-caret-down"></span>
+                  </label>
+                  <input type="checkbox" id="btn">
+                  <ul class="menu">
+                    <li><a href="reactie_combinare.html" class = "rosu" >Reacţia de combinare</a></li>
+					<li><a href="reactie_substitutie.html">Reacţia de substituţie</a></li>
+					<li><a href="reactie_schimb.html">Reacţia de dublă substituţie</a></li>
+					<li><a href="reactie_descompunere.html">Reacţia de descompunere</a></li>
+				 </ul>
+               </nav>
+			</div>
+		</header>
+		<div class="banner-area">
+			<h2>Reactia de substitutie</h2>
+		</div>
+		<div class="content-area">
+			<div class="wrapper">
+				<h2>Reacţia de substituţie (înlocuire)</h2>
+  <p> Reacția de substituție (sau reacție de înlocuire) este o reacție chimică prin care un atom dintr-un compus chimic este înlocuit printr-un alt atom sau printr-un radical. </p>
+  <br>
+  <p> Formula generală: A+BC=AC+B </p>
+  <h2> • Reacţia metalelor cu apa </h2>
+  <p> 2 Na + 2 H2O → 2 NaOH + H2↑
+  <br> Zn + H2O → ZnO + H2↑ </p>
+  
+  <h2> • Reacţia metalelor cu acizii </h2>
+  <p> 2 K + 2 HCl → 2 KCl + H2↑
+  <br> Fe + H2SO4→ FeSO4 + H2↑ </p>
+  
+  <h2> • Reacţia metalelor cu compuşi ai altor metale mai puţin active (oxizi sau săruri) </h2>
+  <p> Al + Fe2O3 → Al2O3 + Fe
+  <br> Fe + CuSO4→ FeSO4 + Cu↓
+  <br> Mg + Fe(NO3)2→ Mg(NO3)2+ Fe↓ </p>
+  
+			</div>
+		</div>
+	</div>
+	
+	<script>
+    $('nav .button').click(function(){
+      $('nav .button span').toggleClass("rotate");
+    });
+      $('nav ul li .first').click(function(){
+        $('nav ul li .first span').toggleClass("rotate");
+      });
+      $('nav ul li .second').click(function(){
+        $('nav ul li .second span').toggleClass("rotate");
+      });
+    </script>
+</body>
+</html>

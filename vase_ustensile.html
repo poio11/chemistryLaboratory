@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Vase si ustensile de laborator </title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+	<link rel="shortcut icon" href="favicon.png" sizes="128x128">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	
+	<style>
+	
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+	
+}
+ .wrapper {
+	width: 1170px;
+	margin: 0 auto;
+}
+header {
+	height: 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+}
+.logo {
+	width: 30%;
+	float: left;
+	line-height: 100px;
+}
+.logo a {
+	text-decoration: none;
+	font-size: 20px;
+	font-family: poppins;
+	color: #fff;
+	letter-spacing: 5px;
+}
+nav {
+	float: right;
+	line-height: 100px;
+}
+nav a {
+	text-decoration: none;
+	font-family: poppins;
+	letter-spacing: 4px;
+	font-size: 15px;
+	margin: 0 10px;
+	color: #fff;
+}
+
+ .drop_down{
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  background: #262626;
+  width: 250px;
+  line-height: 40px;
+  padding: 8px 25px;
+  border-radius: 5px;
+}
+nav label{
+  letter-spacing: 4px;
+  font-size: 15px;
+  margin: 0 10px;
+  color: #fff;
+  font-family: poppins;
+  font-weight: 400;
+  display: inline;
+  cursor: pointer;
+}
+.button span{
+  float: right;
+  line-height: 40px;
+  transition: 0.5s;
+}
+.button span.rotate{
+  transform: rotate(-180deg);
+}
+nav ul{
+  position: absolute;
+  background: #262626;
+  list-style: none;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  display: none;
+}
+[id^=btn]:checked + ul{
+  display: block;
+}
+nav .menu:before{
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  background: #262626;
+  right: 20px;
+  top: -10px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+nav ul li{
+  line-height: 40px;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+nav ul li label{
+  font-size: 18px;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+}
+nav ul li a:hover,
+nav ul li label:hover{
+  color: cyan;
+}
+input{
+  display: none;
+}
+
+.banner-area {
+	width: 100%;
+	height: 500px;
+	position: fixed;
+	top: 100px;
+	background-image: url(vase4.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+.banner-area h2 {
+	padding-top: 8%;
+	font-size: 70px;
+	font-family: poppins;
+	text-transform: uppercase;
+	color: #fff;
+}
+.content-area {
+	width: 100%;
+	position: relative;
+	top: 450px;
+	background: #ebebeb;
+	height: 18000px;
+}
+.content-area h2 {
+	font-family: poppins;
+	letter-spacing: 4px;
+	padding-top: 30px;
+	font-size: 40px;
+	margin: 0;
+}
+.content-area p {
+	padding: 2% 0px;
+	font-family: poppins;
+	line-height: 30px;
+}
+
+
+
+
+
+
+.imageoverlay {
+    position: relative;
+    width: 400px;
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 1;
+    left: 2;
+    width: 100%;
+    height: 96%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image__title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.image__description {
+    font-size: 1.25em;
+    margin-top: 0.25em;
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+::selection{
+  color: #fff;
+  background: #007bff;
+}
+.ustensile{
+  display: block;
+  justify-content: center;
+}
+
+
+.wrapper .items{
+  display: block;
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-between;
+}
+.items span{
+  padding: 7px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #007bff;
+  border-radius: 50px;
+  border: 2px solid #007bff;
+  transition: all 0.3s ease;
+}
+.items span.active,
+.items span:hover{
+  color: #fff;
+  background: #007bff;
+}
+
+.gallery{
+  display: inline;
+ 
+  margin-top: 30px;
+}
+.gallery .image{
+  width: 100%;
+  padding: 7px;
+}
+.gallery .image span{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery .image img{
+  width: 100%;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+.gallery .image:hover img{
+  transform: scale(1.1);
+}
+.gallery .image.hide{
+  display: none;
+}
+.gallery .image.show{
+  animation: animate 0.4s ease;
+}
+@keyframes animate {
+  0%{
+    transform: scale(0.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+
+
+@media (max-width: 1000px) {
+  .gallery .image{
+    width: calc(100% / 3);
+  }
+}
+@media (max-width: 800px) {
+  .gallery .image{
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 700px) {
+  .wrapper nav .items{
+    max-width: 600px;
+  }
+  nav .items span{
+    padding: 7px 15px;
+  }
+}
+@media (max-width: 600px) {
+  .wrapper{
+    margin: 30px auto;
+  }
+  .wrapper nav .items{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav .items span{
+    margin: 5px;
+  }
+  .gallery .image{
+    width: 100%;
+  }
+}
+</style>
+	
+	
+</head>
+<body>
+	<div class="box-area">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+					<a href="Home.html">Laborator de buzunar</a>
+				</div>
+				<nav>
+					<a href="vase_ustensile.html">Instrumente de laborator</a> 
+					<a href="tabel periodic.html">Tabel periodic</a>
+				</nav>
+				<nav class = "drop_down">
+                  <label for="btn" class="button"> Tipuri de reacţii
+                    <span class="fas fa-caret-down"></span>
+                  </label>
+                  <input type="checkbox" id="btn">
+                  <ul class="menu">
+                    <li><a href="reactie_combinare.html" class = "rosu" >Reacţia de combinare</a></li>
+					<li><a href="reactie_substitutie.html">Reacţia de substituţie</a></li>
+					<li><a href="reactie_schimb.html">Reacţia de dublă substituţie</a></li>
+					<li><a href="reactie_descompunere.html">Reacţia de descompunere</a></li>
+				 </ul>
+               </nav>
+			</div>
+		</header>
+		<div class="banner-area">
+			<h2>Vase şi ustensile de laborator</h2>
+		</div>
+		<div class="content-area">
+			<div class="wrapper">
+			
+    <!-- creaza categoriile de vase si instrumente -->
+    <nav class = "ustensile">
+      <div class="items">
+        <span class="item active" data-name="all">Toate</span>
+        <span class="item" data-name="Vase și ustensile din sticlă">Vase și ustensile din sticlă</span>
+        <span class="item" data-name="Vase de porțelan">Vase de porțelan</span>
+        <span class="item" data-name="Ustensile și materiale de laborator">Ustensile și materiale de laborator</span>
+      </div>
+    </nav>
+	
+	
+	
+	<!-- adaugare poze cu vasele si instrumentele impreuna cu categoria din care fac parte si titlul + descrierea obiectului -->
+  <div class="gallery">
+	<div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Eprubete.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Eprubete</div>
+              <p class="image__description"> • Sunt cele mai simple vase de laborator; au formă de tuburi închise la un capăt.
+                <br /> • Pot fi și gradate.
+                <br /> • Servesc la efectuarea  reacțiilor chimice. 
+			  </p>
+         </div>
+       </div>
+	 </div>
+     
+     <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Pahar Berzelius.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Pahar Berzelius</div>
+              <p class="image__description"> • Are formă cilindrică, marginea puțin răsfrântă și prevăzută cu un cioc care permite transvazarea lichidelor 
+                <br /> • Se utilizează la prepararea soluțiilor și la efectuarea unor reacții chimice.  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Pahar Erlenmeyer.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Pahar Erlenmeyer</div>
+              <p class="image__description"> • Are formă conică, mai lat la bază 
+			    <br /> • Se folosește pentru titrări volumetrice, precipitări etc. </p>
+         </div>
+       </div>
+	 </div>
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Vasul de trompă.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Vasul de trompă</div>
+              <p class="image__description"> • Este un pahar conic cu pereți mai groși și prevăzut cu un tub lateral  
+                <br /> • Se folosește pentru filtrarea sub vid (colectarea filtratului).  </p>  
+         </div>
+       </div>
+	 </div> 
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Baloanele cu fund rotund și cu fund plat.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Baloanele cu fund rotund și cu fund plat</div>
+              <p class="image__description"> • Pot avea gâtul lung sau scurt, larg sau îngust  
+                <br /> • Se folosesc la operațiile de distilare, extracție, fierbere și determinarea unor constante fizice.  </p>
+         </div>
+       </div>
+	 </div>
+	 
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Balonul Würtz.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Balonul Würtz</div>
+              <p class="image__description"> • Este un balon cu fund rotund, prevăzut cu un tub lateral
+                <br /> • Se folosește la instalațiile de distilare și efectuarea unor reacții chimice  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Balonul Engler.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Balonul Engler</div>
+              <p class="image__description"> • Se folosește la distilări și efectuarea unor reacții chimice </p>
+         </div>
+       </div>
+	 </div>
+	 
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Balonul Kiejdahl.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Balonul Kiejdahl</div>
+              <p class="image__description"> • Are formă alungită
+                <br /> • Se folosește pentru determinarea azotului din substanțe organice. </p> 
+         </div>
+       </div>
+	 </div>
+	
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Vas de absorbție Woolf.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Vas de absorbție Woolf</div>
+              <p class="image__description"> • Sunt recipiente cu pereții groși, prevăzute cu 2-3 gâturi
+	            <br /> • Se folosesc pentru spălarea sau purificarea gazelor și ca vase de siguranță la pompele cu vid. </p>
+         </div>
+       </div>
+	 </div>
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Tuburi de absorbție.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Tuburi de absorbție</div>
+              <p class="image__description"> • Au forma literei U sau pot fi drepte 
+                <br /> • Se folosesc pentru uscarea gazelor, pentru protejarea substanțelor împotriva unor agenți din aer: vapori de apă, dioxid de carbon, praf etc. </p>
+         </div>
+       </div>
+	 </div> 
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Fiolele de cântărire.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Fiolele de cântărire</div>
+              <p class="image__description"> • Sunt prevăzute cu capace șlefuite pentru a le asigura etanașeitatea 
+	            <br /> • Se folosesc pentru cântărirea cu precizie a substanțelor sub formă de pulbere sau lichide. </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Sticla de ceas.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Sticla de ceas</div>
+              <p class="image__description"> • Se folosește pentru cântărirea substanțelor, pentru acoperirea paharelor, pentru evaporarea unor cantități mici de lichide etc. </p>
+         </div>
+       </div>
+	 </div>
+	 
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Cristalizoare.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Cristalizoare</div>
+              <p class="image__description"> • Sunt vase de sticlă joase și largi, cu sau fără cioc și fundul plat
+	            <br /> • Sunt utilizate pentru concentrarea rapidă a soluțiilor și pentru recristalizare </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Sticluțe picurătoare.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Sticluțe picurătoare</div>
+              <p class="image__description"> • Sticluțe picurătoare  sunt de diferite tipuri și se utilizează pentru picurarea unor cantități mici de lichide  </p> 
+         </div>
+       </div>
+	 </div>
+	
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Piseta.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Piseta</div>
+              <p class="image__description"> • Se folosește pentru păstrarea apei distilate necesare la spălarea precipitatelor, pentru antrenarea substanțelor de pe pereții interiori ai vaselor, în operația de transvazare, pentru aducerea la semn în vasele de măsură  </p> 
+         </div>
+       </div>
+	 </div>
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Pâlnia de filtrare.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Pâlnia de filtrare</div>
+              <p class="image__description"> • Are formă conică și este prelungită cu un tub tăiat oblic
+                <br /> • Se folosește pentru filtrarea și transvazarea lichidelor </p> 
+         </div>
+       </div>
+	 </div> 
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Pâlnia de separare.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Pâlnia de separare</div>
+              <p class="image__description"> • Este prevăzută la partea superioară cu un dop rodat, iar la partea inferioară, cu un tub de scurgere pe care se găsește un robinet cu care se reglează scurgerea 
+                <br /> • Servește la separarea amestecurilor formate din lichide nemiscibile.  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Pâlnia de picurare.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Pâlnia de picurare</div>
+              <p class="image__description"> • Este folosită pentru picurarea unor cantități de lichid în baloanele de reacție </p> 
+         </div>
+       </div>
+	 </div>
+	
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Refrigerentele.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Refrigerentele</div>
+              <p class="image__description"> • Sunt dispozitive folosite pentru răcirea și condensarea vaporilor formați la distilarea diferitelor lichide
+	            <br /> • Cele mai cunoscute sunt: refrigerentul drept Liebing (a) , refrigerentul cu bule (b,c), refrigerentul cu serpentină (d) </p> 
+         </div>
+       </div>
+	 </div>
+	  
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Refrigerentul cu aer.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Refrigerentul cu aer</div>
+              <p class="image__description"> • Realizează 	condensarea 	vaporilor 	cu ajutorul aerului </p>
+         </div>
+       </div>
+	 </div> 
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Cilindrii gradați.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Cilindrii gradați</div>
+              <p class="image__description"> • Sunt vase de formă cilindrică, gradate 
+	            <br /> • Se folosesc pentru măsurarea aproximativă a volumelor de lichide 
+		     </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Baloane cotate.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Baloane cotate</div>
+              <p class="image__description"> • Sunt baloane cu fund plat, cu gâtul și lung și îngust  închise cu dop rodat
+                <br /> • Pe gât au gravat un inel circular care indică limita de umplere pentru volumul scris pe balon(cota)
+                <br /> • Sunt utilizate pentru prepararea soluțiilor de diferite concentrații 
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Pipete.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Pipete</div>
+              <p class="image__description"> • Se prezintă sub formă de tuburi de sticlă, efilate la un capăt 
+	            <br /> • Pipetele pot fi:  
+	            <br />  - gradate, pentru măsurarea unor volume variabile de lichid 
+	            <br />  - cu bulă, cu un singur reper situat spre capătul superior, cu care se poate măsura doar volumul înscris pe acesta. Se folosesc pentru măsurarea exactă a volumelor de lichide 
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase și ustensile din sticlă"><span>
+        <img class="image__img" src="Biurete.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Biurete</div>
+              <p class="image__description"> • Sunt tuburi de sticla gradate 
+                <br /> • Pot fi drepte sau cu cot, prevăzute la partea inferioară cu robinet de sticlă sau din plastic, cu clemă sau cu bilă.  
+                <br /> • Se folosesc pentru măsurarea exactă a volumelor de lichide și pentru operații de titrare.   
+	          </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase de porțelan"><span>
+        <img class="image__img" src="Creuzete.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Creuzete</div>
+              <p class="image__description"> • Sunt vase din porțelan, cu sau fără capac și pot avea diferite forme 
+	            <br /> • Se folosesc pentru calcinarea diferitelor substanțe  
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase de porțelan"><span>
+        <img class="image__img" src="Capsule.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Capsule</div>
+              <p class="image__description"> • Se folosesc pentru evaporarea solventului din soluții și pentru încălzirea lichidelor  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase de porțelan"><span>
+        <img class="image__img" src="Mojare cu pistil.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Mojare cu pistil</div>
+              <p class="image__description"> • Se folosesc pentru sfărmarea diferitelor substanțe și la omogenizarea produselor solide
+	            <br /> • Pot fi confecționate și din alte materiale: sticlă, agat etc. </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Vase de porțelan"><span>
+        <img class="image__img" src="Pâlnia Büchner.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Pâlnia Büchner</div>
+              <p class="image__description"> • Are formă cilindrică și este prevăzută în interior cu o placă perforată pe care se așează o rondea de hârtie de filtru
+                <br /> • Se folosesc pentru filtrarea sub vid a precipitatelor  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Stativele.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Stativele</div>
+              <p class="image__description"> • Sunt formate dintr-o tijă fixată într-o placă metalică grea, care asigură stabilitatea
+	            <br /> • Sunt utilizate pentru susținerea și fixarea diferitelor aparate sau instalații de laborator, cu ajutorul clemelor și a inelelor </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Stative pentru pipete.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Stative pentru pipete</div>
+              <p class="image__description"> • Au formă circulară 
+                <br /> • Pot fi confecționate din material plastic sau din lemn și au mai multe locuri, de diferite dimensiuni
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Clema Hoffmann.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Clema Hoffmann</div>
+              <p class="image__description"> • Este o clemă pentru reglarea debitelor prin închiderea tuburilor de cauciuc 
+	            <br /> • Se poate închide și deschide cu ajutorul unui șurub 
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Clema Mohr.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Clema Mohr</div>
+              <p class="image__description"> • Este o clemă pentru reglarea debitelor prin închiderea tuburilor de cauciuc 
+                <br /> • Se poate închide și deschide cu ajutorul unui arc. 
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Trepiedul si Sita de azbest.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Trepiedul si Sita de azbest</div>
+              <p class="image__description"> • Trepiedul - a
+	            <br /> 	- Servește la susținerea diferitelor vase în timpul încălziri 
+	            <br /> • Sita de azbest - b
+                <br /> 	- Protejează vasele de sticlă sau de porțelan supuse încălzirii, de contactul direct cu flacăra  
+		      </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Cleștele de metal si Cleștele de lemn.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Cleștele de metal si Cleștele de lemn</div>
+              <p class="image__description"> • Cleștele de metal 
+                <br /> 	- Servește la manipularea diferitelor vase încălzite la temperaturi mai ridicate 
+                <br />  - Este confecționat din nichel, oțel inoxidabil, alamă sau aluminiu
+                <br /> • Cleștele de lemn 
+                <br /> 	- Servește la manipularea eprubetelor 
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Spatule.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Spatule</div>
+              <p class="image__description"> • Se folosesc pentru manipularea reactivilor solizi </p>
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Aparate pentru încălzit.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Aparate pentru încălzit</div>
+              <p class="image__description"> • Becul Bunsen - a
+                <br />  - Reglarea debitului de aer se face prin manevrarea manșonului aflat la baza tubului
+                <br /> • Becul  Teclu 
+                <br /> 	- Reglarea debitului de aer se face cu ajutorul unui disc aflat la baza tubului, care este coborât când este necesar un exces de aer sau este ridicat pentru oprirea intrării aerului
+                <br /> 	- Prezintă avantajul că permite și reglarea debitului de gaz  
+			  </p> 
+         </div>
+       </div>
+	 </div>
+	 
+	 <div class="imageoverlay">
+	  <div class="image" data-name="Ustensile și materiale de laborator"><span>
+        <img class="image__img" src="Baia de apă.jpg" >
+          <div class="image__overlay image__overlay--blur">
+            <div class="image__title">Baia de apă</div>
+              <p class="image__description"> • Permite o încălzire sub 100°C și se utilizează la evaporarea sau la distilarea solvenților inflamabili 
+	            <br /> • Pentru temperaturi mai mari de  100°C se utilizează băile de nisip sau băile cu ulei </p>
+         </div>
+       </div>
+	 </div>
+	</div>
+  </div>
+ </div>
+</div>
+	
+	
+	
+	<script>
+    $('nav .button').click(function(){
+      $('nav .button span').toggleClass("rotate");
+    });
+      $('nav ul li .first').click(function(){
+        $('nav ul li .first span').toggleClass("rotate");
+      });
+      $('nav ul li .second').click(function(){
+        $('nav ul li .second span').toggleClass("rotate");
+      });
+
+
+	  //selecteaza toate itemele de care are nevoie
+const filterItem = document.querySelector(".items");
+const filterImg = document.querySelectorAll(".gallery .image");
+
+window.onload = ()=>{ 
+  filterItem.onclick = (selectedItem)=>{ 
+    if(selectedItem.target.classList.contains("item")){ 
+      filterItem.querySelector(".active").classList.remove("active");
+      selectedItem.target.classList.add("active"); 
+      let filterName = selectedItem.target.getAttribute("data-name"); 
+      filterImg.forEach((image) => {
+        let filterImges = image.getAttribute("data-name"); 
+        if((filterImges == filterName) || (filterName == "all")){
+          image.classList.remove("hide"); 
+          image.classList.add("show"); 
+        }else{
+          image.classList.add("hide"); 
+          image.classList.remove("show");
+        }
+      });
+    }
+  }
+  for (let i = 0; i < filterImg.length; i++) {
+    filterImg[i].setAttribute("onclick", "preview(this)"); 
+  }
+}
+
+	  
+    </script>
+</body>
+</html>

@@ -1,0 +1,2608 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Tabel periodic </title>
+	
+	<link rel="shortcut icon" href="favicon.png" sizes="128x128">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	
+	<style>
+	
+	* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+}
+.wrapper {
+	width: 1170px;
+	margin: 0 auto;
+}
+header {
+	height: 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+}
+.logo {
+	width: 30%;
+	float: left;
+	line-height: 100px;
+}
+.logo a {
+	text-decoration: none;
+	font-size: 20px;
+	font-family: poppins;
+	color: #fff;
+	letter-spacing: 5px;
+}
+nav {
+	float: right;
+	line-height: 100px;
+}
+nav a {
+	text-decoration: none;
+	font-family: poppins;
+	letter-spacing: 4px;
+	font-size: 15px;
+	margin: 0 10px;
+	color: #fff;
+}
+
+.drop_down{
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  background: #262626;
+  width: 250px;
+  line-height: 40px;
+  padding: 8px 25px;
+  border-radius: 5px;
+}
+nav label{
+  letter-spacing: 4px;
+  font-size: 15px;
+  margin: 0 10px;
+  color: #fff;
+  font-family: poppins;
+  font-weight: 400;
+  display: inline;
+  cursor: pointer;
+}
+.button span{
+  float: right;
+  line-height: 40px;
+  transition: 0.5s;
+}
+.button span.rotate{
+  transform: rotate(-180deg);
+}
+nav ul{
+  position: absolute;
+  background: #262626;
+  list-style: none;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  display: none;
+}
+[id^=btn]:checked + ul{
+  display: block;
+}
+nav .menu:before{
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  background: #262626;
+  right: 20px;
+  top: -10px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+nav ul li{
+  line-height: 40px;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+nav ul li label{
+  font-size: 18px;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+}
+nav ul li a:hover,
+nav ul li label:hover{
+  color: cyan;
+}
+input{
+  display: none;
+}
+
+ td{
+	 width: 5vw;
+	 border: 1px solid black;
+	 text-align: center;
+ }
+ 
+ .culoare_nemetale{
+	 background-color: #72a1a7;
+ }
+ 
+ .culoare_metale{
+	 background-color: #ffda5a;
+ }
+ 
+ .culoare_gazeRare{
+	 background-color: #e75300;
+ }
+ 
+ .culoare_LA{
+	 background-color: #fd6c71;
+ }
+ 
+ .noBorder{
+	 border: none;
+ }
+ 
+ 
+
+.content-area {
+	width: 100%;
+	position: relative;
+	top: 100px;
+	background: #ebebeb;
+	height: 600px;
+}
+.content-area h2 {
+	font-family: poppins;
+	letter-spacing: 4px;
+	padding-top: 30px;
+	font-size: 40px;
+	margin: 0;
+}
+.content-area p {
+	padding: 2% 0px;
+	font-family: poppins;
+	line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container{
+  height: 45px;
+  width: 60px;
+  overflow: hidden;
+  margin: 0 auto;
+  
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+ 
+}
+.container:hover{
+  height: 350px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 35px 0px rgba(0,0,0,0.3);
+}
+.container .tabel img{
+  position: relative;
+  z-index: 20;
+  border-radius: 50%;
+  display: block;
+  height: 200px;
+  width: 200px;
+  border: 5px solid #fff;
+  object-fit: cover;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+}
+.container:hover .tabel td.active{
+  height: 470px;
+  width: 350px;
+  margin: 0px auto;
+  border: none;
+  border-radius: 5px;
+}
+.tabel .title{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 10px;
+  line-height: 25px;
+}
+.tabel .denumire{
+  color: #fff;
+  font-size: 20px;
+  line-height: 0px;
+  margin: 10px 0;
+}
+.content{
+  color: #fff;
+  font-size: 17px;
+  margin-top: 10px;
+  padding: 1px 20px 10px 20px!important;
+}
+
+</style>
+	
+	
+</head>
+<body>
+	<div class="box-area">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+					<a href="Home.html">Laborator de buzunar</a>
+				</div>
+				<nav>
+					<a href="vase_ustensile.html">Instrumente de laborator</a>
+					<a href="tabel periodic.html">Tabel periodic</a> 
+				</nav>
+				<nav class = "drop_down">
+                  <label for="btn" class="button"> Tipuri de reacţii
+                    <span class="fas fa-caret-down"></span>
+                  </label>
+                  <input type="checkbox" id="btn">
+                  <ul class="menu">
+                    <li><a href="reactie_combinare.html" class = "rosu" >Reacţia de combinare</a></li>
+					<li><a href="reactie_substitutie.html">Reacţia de substituţie</a></li>
+					<li><a href="reactie_schimb.html">Reacţia de dublă substituţie</a></li>
+					<li><a href="reactie_descompunere.html">Reacţia de descompunere</a></li>
+				 </ul>
+               </nav>
+			</div>
+		</header>
+		<div class="content-area">
+			<div class="wrapper">
+ <h2> Tabel periodic </h2>
+  <table>
+    <tr>
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">H</div>
+              <div class="denumire">HIDROGEN</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 1 
+		      <br> Configuratie electronică: 1s1
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 2,2
+		      <br> Masa atomică: 1,008
+		      <br> Densitate: 0,0000899
+		      <br> Temperatura de topire: -259,34
+		      <br> Raza atomului: 0,79
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td colspan = "16" class = "noBorder"> </td> 
+	  
+	  <td class = "culoare_gazeRare">
+        <div class="container">
+          <div class="tabel">
+            <div class="title">He</div>
+              <div class="denumire">HELIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 2
+		      <br> Configuratie electronică: 1s2
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 4,003
+		      <br> Densitate: 0,0001785
+		      <br> Temperatura de topire: -272,15
+		      <br> Raza atomului: 0,49
+            </p>
+          </div>
+        </div>	  
+	  </td>
+	</tr>
+	<tr>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Li</div>
+              <div class="denumire">LITIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 3
+		      <br> Configuratie electronică: 2s2
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 1
+		      <br> Masa atomică: 6,941
+		      <br> Densitate: 0,53
+		      <br> Temperatura de topire: 180,54
+		      <br> Raza atomului: 190,54
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Be</div>
+              <div class="denumire">BERILIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 4
+		      <br> Configuratie electronică: 2s2
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,5
+		      <br> Masa atomică: 9,0122
+		      <br> Densitate: 1,8477
+		      <br> Temperatura de topire: 1278
+		      <br> Raza atomului: 1,40
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td colspan = "10" class  = "noBorder"> </td>
+	  
+	  <td class = "culoare_nemetale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">B</div>
+              <div class="denumire">BOR</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 5
+		      <br> Configuratie electronică: 2s2 2p2 
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 2,0
+		      <br> Masa atomică: 10,811
+		      <br> Densitate: 2,34
+		      <br> Temperatura de topire: 2300
+		      <br> Raza atomului: 1,17
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">C</div>
+              <div class="denumire">CARBON</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 6
+		      <br> Configuratie electronică: 2s2 2p2
+		      <br> Număr de oxidare: 4
+		      <br> Electronegativitatea după Pauling: 2,5
+		      <br> Masa atomică: 12,011
+		      <br> Densitate: 2,62
+		      <br> Temperatura de topire: 3550
+		      <br> Raza atomului: 0,91
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">N</div>
+              <div class="denumire">AZOT</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 7
+		      <br> Configuratie electronică: 2s2 2p3
+		      <br> Număr de oxidare: 5
+		      <br> Electronegativitatea după Pauling: 3,0
+		      <br> Masa atomică: 14,007
+		      <br> Densitate: 0,00125
+		      <br> Temperatura de topire: -209,86
+		      <br> Raza atomului: 0,75
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">O</div>
+              <div class="denumire">OXIGEN</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 8
+		      <br> Configuratie electronică: 2s2 2p4
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 3,5
+		      <br> Masa atomică: 15,999
+		      <br> Densitate: 0,001429
+		      <br> Temperatura de topire: -218,4
+		      <br> Raza atomului: 0,65
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">F</div>
+              <div class="denumire">FLUOR</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 9
+		      <br> Configuratie electronică: 2s2 2p5
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 4,0
+		      <br> Masa atomică: 18,998
+		      <br> Densitate: 0,001694
+		      <br> Temperatura de topire: -219,62
+		      <br> Raza atomului: 0,57
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_gazeRare">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ne</div>
+              <div class="denumire">NEON</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 10
+		      <br> Configuratie electronică: 2s2 2p4
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 20,180
+		      <br> Densitate: 0,00090
+		      <br> Temperatura de topire: -248,67
+		      <br> Raza atomului: 0,51
+            </p>
+          </div>
+        </div>
+	  </td>
+	</tr>
+	
+	<tr>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Na</div>
+              <div class="denumire">SODIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 11 
+		      <br> Configuratie electronică: 3s2
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 0,9
+		      <br> Masa atomică: 22,990
+		      <br> Densitate: 0,971
+		      <br> Temperatura de topire: 97,81
+		      <br> Raza atomului: 2,23
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Mg</div>
+              <div class="denumire">MAGNEZIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 12
+		      <br> Configuratie electronică: 3s2
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 24,305
+		      <br> Densitate: 1,738
+		      <br> Temperatura de topire: 649
+		      <br> Raza atomului: 1,72
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td colspan = "10" class = "noBorder">  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Al</div>
+              <div class="denumire">ALUMINIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 13
+		      <br> Configuratie electronică: 3s2 3p2
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,5
+		      <br> Masa atomică: 26,982
+		      <br> Densitate: 2,702
+		      <br> Temperatura de topire: 660
+		      <br> Raza atomului: 1,82
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Si</div>
+              <div class="denumire">SILICIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 14
+		      <br> Configuratie electronică: 3s2 3p2
+		      <br> Număr de oxidare: 4
+		      <br> Electronegativitatea după Pauling: 1,8
+		      <br> Masa atomică: 28,086
+		      <br> Densitate: 2,33
+		      <br> Temperatura de topire: 1410
+		      <br> Raza atomului: 1,46
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">P</div>
+              <div class="denumire">FOSFOR</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 15
+		      <br> Configuratie electronică:  3s2 3p3
+		      <br> Număr de oxidare: 5;3
+		      <br> Electronegativitatea după Pauling: 2,1
+		      <br> Masa atomică: 30,974
+		      <br> Densitate: 1,82
+		      <br> Temperatura de topire: 44,1
+		      <br> Raza atomului: 1,23
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">S</div>
+              <div class="denumire">SULF</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 16
+		      <br> Configuratie electronică: 3s2 3p4
+		      <br> Număr de oxidare: 6;4
+		      <br> Electronegativitatea după Pauling: 2,5
+		      <br> Masa atomică: 32,065
+		      <br> Densitate: 2,07
+		      <br> Temperatura de topire: 113
+		      <br> Raza atomului: 0,97
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cl</div>
+              <div class="denumire">CLOR</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 17
+		      <br> Configuratie electronică: 3s2 3p5 
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 3,0
+		      <br> Masa atomică: 35,453
+		      <br> Densitate: 0,003214
+		      <br> Temperatura de topire: -34,6
+		      <br> Raza atomului: 0,97
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_gazeRare">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ar</div>
+              <div class="denumire">ARGON</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 18
+		      <br> Configuratie electronică: 3s2 3p6
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 39,948
+		      <br> Densitate:0,001782
+		      <br> Temperatura de topire: -189,4
+		      <br> Raza atomului: 0,88
+            </p>
+          </div>
+        </div>
+	  </td>
+	</tr>
+	<tr>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">K</div>
+              <div class="denumire">POTASIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 19
+		      <br> Configuratie electronică: 4s1
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 0,8
+		      <br> Masa atomică: 39,098
+		      <br> Densitate: 0,865
+		      <br> Temperatura de topire: 63,7
+		      <br> Raza atomului: 2,77
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ca</div>
+              <div class="denumire">CALCIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 20
+		      <br> Configuratie electronică: 4s2 
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,0
+		      <br> Masa atomică: 40,078
+		      <br> Densitate: 1,55
+		      <br> Temperatura de topire: 839
+		      <br> Raza atomului: 2,23
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Sc</div>
+              <div class="denumire">SCANDIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 21
+		      <br> Configuratie electronică: 4s2 3d1
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,3
+		      <br> Masa atomică: 44,956
+		      <br> Densitate: 2,98
+		      <br> Temperatura de topire: 1539
+		      <br> Raza atomului: 2,09
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ti</div>
+              <div class="denumire">TITAN</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 22
+		      <br> Configuratie electronică: 4s2 3d2
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,5
+		      <br> Masa atomică: 47,867
+		      <br> Densitate: 4,54
+		      <br> Temperatura de topire: 1660
+		      <br> Raza atomului: 2,00
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">V</div>
+              <div class="denumire"></div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 23
+		      <br> Configuratie electronică: 4s2 3d3
+		      <br> Număr de oxidare: 5;3
+		      <br> Electronegativitatea după Pauling: 1,6
+		      <br> Masa atomică: 50,942
+		      <br> Densitate: 5,8
+		      <br> Temperatura de topire: 1890
+		      <br> Raza atomului: 1,92
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cr</div>
+              <div class="denumire">CROM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 24
+		      <br> Configuratie electronică: 4s1 3d5
+		      <br> Număr de oxidare: 6;3
+		      <br> Electronegativitatea după Pauling: 1,6
+		      <br> Masa atomică: 51,996
+		      <br> Densitate: 7,19
+		      <br> Temperatura de topire: 1857
+		      <br> Raza atomului: 1,85
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Mn</div>
+              <div class="denumire">MANGAN</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 25
+		      <br> Configuratie electronică: 4s2 3d5
+		      <br> Număr de oxidare: 7;2
+		      <br> Electronegativitatea după Pauling: 1,5
+		      <br> Masa atomică: 54,938
+		      <br> Densitate: 7,43
+		      <br> Temperatura de topire: 1244
+		      <br> Raza atomului: 1,79
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Fe</div>
+              <div class="denumire">FIER</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 26
+		      <br> Configuratie electronică: 4s2 3d6
+		      <br> Număr de oxidare: 3,2
+		      <br> Electronegativitatea după Pauling: 1,8
+		      <br> Masa atomică: 55,845
+		      <br> Densitate: 7,86
+		      <br> Temperatura de topire: 1536
+		      <br> Raza atomului: 1,72
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Co</div>
+              <div class="denumire">COBALT</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 27
+		      <br> Configuratie electronică: 4s2 3d7
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 58,693
+		      <br> Densitate: 8,9
+		      <br> Temperatura de topire: 1495
+		      <br> Raza atomului: 1,67
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ni</div>
+              <div class="denumire">NICHEL</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 28
+		      <br> Configuratie electronică: 4s2 3d8
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,8
+		      <br> Masa atomică: 58,693
+		      <br> Densitate: 8,902
+		      <br> Temperatura de topire: 1453
+		      <br> Raza atomului: 1,62
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cu</div>
+              <div class="denumire">CUPRU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 29
+		      <br> Configuratie electronică: 4s1 3d10 
+		      <br> Număr de oxidare: 2;1
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 63,546
+		      <br> Densitate: 8,96
+		      <br> Temperatura de topire: 1083,4
+		      <br> Raza atomului: 1,57
+            </p> 
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Zn</div>
+              <div class="denumire">ZINC</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 30
+		      <br> Configuratie electronică: 4s2 3d10
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,6
+		      <br> Masa atomică: 65,38
+		      <br> Densitate: 7,133
+		      <br> Temperatura de topire: 419,58
+		      <br> Raza atomului: 1,53
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ga</div>
+              <div class="denumire">GALIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 31
+		      <br> Configuratie electronică: 4s2 3d10 4p1
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,6
+		      <br> Masa atomică: 69,723
+		      <br> Densitate: 5,907
+		      <br> Temperatura de topire: 29,78
+		      <br> Raza atomului: 1,81
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ge</div>
+              <div class="denumire">GERMANIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 32
+		      <br> Configuratie electronică: 4s2 3d10 4p2 
+		      <br> Număr de oxidare: 4;2
+		      <br> Electronegativitatea după Pauling: 1,8
+		      <br> Masa atomică: 72,64
+		      <br> Densitate: 5,323
+		      <br> Temperatura de topire: 937,4
+		      <br> Raza atomului: 1,52
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">As</div>
+              <div class="denumire">ARSENIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 33
+		      <br> Configuratie electronică: 4s2 3d10 4p2
+		      <br> Număr de oxidare: 5;3
+		      <br> Electronegativitatea după Pauling: 1,0
+		      <br> Masa atomică: 74,922
+		      <br> Densitate: 5,72
+		      <br> Temperatura de topire: 613
+		      <br> Raza atomului: 1,33
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Se</div>
+              <div class="denumire">SELENIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 34
+		      <br> Configuratie electronică: 4s1 3d10 4p4
+		      <br> Număr de oxidare: 6;4
+		      <br> Electronegativitatea după Pauling: 2,4
+		      <br> Masa atomică: 78,96
+		      <br> Densitate: 47,79
+		      <br> Temperatura de topire: 217
+		      <br> Raza atomului: 1,22
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Br</div>
+              <div class="denumire">BROM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 35
+		      <br> Configuratie electronică: 4s2 3d10 4p5
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 2,8
+		      <br> Masa atomică: 79,904
+		      <br> Densitate: 3,119
+		      <br> Temperatura de topire: -7,23
+		      <br> Raza atomului: 1,12
+            </p>
+          </div>
+        </div>
+	  </td>
+	  
+	  <td class = "culoare_gazeRare">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Kr</div>
+              <div class="denumire">KRIPTON</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 36
+		      <br> Configuratie electronică: 4s2 3d10 4p6
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 83,798
+		      <br> Densitate: 0,003708
+		      <br> Temperatura de topire: -156,6
+		      <br> Raza atomului: 1,03
+            </p>
+          </div>
+        </div>
+	  </td>
+	</tr>
+	<tr>
+	  <td class = "culoare_metale"> 
+        <div class="container">
+          <div class="tabel">
+            <div class="title">Rb</div>
+              <div class="denumire">RUBIDIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 37
+		      <br> Configuratie electronică: 5s1
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 0,8
+		      <br> Masa atomică: 85,468
+		      <br> Densitate: 1,532
+		      <br> Temperatura de topire: 39,1
+		      <br> Raza atomului: 2,98
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Sr</div>
+              <div class="denumire">STRONTIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 38
+		      <br> Configuratie electronică: 5s2
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,0
+		      <br> Masa atomică: 87,62
+		      <br> Densitate: 2,54
+		      <br> Temperatura de topire: 769
+		      <br> Raza atomului: 2,45
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Y</div>
+              <div class="denumire">YTRIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 39
+		      <br> Configuratie electronică: 5s2 3d1
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,3
+		      <br> Masa atomică: 88,906
+		      <br> Densitate: 4,469
+		      <br> Temperatura de topire: 1523
+		      <br> Raza atomului: 2,27
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Zr</div>
+              <div class="denumire">ZIRCONIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 40
+		      <br> Configuratie electronică: 5s2 4d2
+		      <br> Număr de oxidare: 4
+		      <br> Electronegativitatea după Pauling: 1,4
+		      <br> Masa atomică: 91,224
+		      <br> Densitate: 6,49
+		      <br> Temperatura de topire: 1852
+		      <br> Raza atomului: 2,16
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Nb</div>
+              <div class="denumire">NIOBIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 41
+		      <br> Configuratie electronică: 5s2 4d4
+		      <br> Număr de oxidare: 5
+		      <br> Electronegativitatea după Pauling: 1,6
+		      <br> Masa atomică: 92,906
+		      <br> Densitate: 8,57
+		      <br> Temperatura de topire: 24,68
+		      <br> Raza atomului: 2,08
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Mo</div>
+              <div class="denumire">MOLIBDEN</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 42
+		      <br> Configuratie electronică: 5s1 4d2
+		      <br> Număr de oxidare: 6,4
+		      <br> Electronegativitatea după Pauling: 1,8
+		      <br> Masa atomică: 95,96
+		      <br> Densitate: 10,22 
+		      <br> Temperatura de topire: 26,71
+		      <br> Raza atomului: 2,01
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Tc</div>
+              <div class="denumire">TECHNETIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 43
+		      <br> Configuratie electronică: 5s2 4d5
+		      <br> Număr de oxidare: 7
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 98
+		      <br> Densitate: 11,5
+		      <br> Temperatura de topire: 21,72
+		      <br> Raza atomului: 1,95
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ru</div>
+              <div class="denumire">RUTENIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 44
+		      <br> Configuratie electronică: 5s1 4d7
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 2,2
+		      <br> Masa atomică: 101,07
+		      <br> Densitate: 12,2
+		      <br> Temperatura de topire: 23,10
+		      <br> Raza atomului: 1,89
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Rh</div>
+              <div class="denumire">RHODIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 45
+		      <br> Configuratie electronică: 5s1 4d8
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 2,2
+		      <br> Masa atomică: 102,91
+		      <br> Densitate: 12,41
+		      <br> Temperatura de topire: 19,66
+		      <br> Raza atomului: 1,83
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Pd</div>
+              <div class="denumire">PALADIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 46
+		      <br> Configuratie electronică: 5s0 4d10
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 2,2 
+		      <br> Masa atomică: 106,42
+		      <br> Densitate: 12,02
+		      <br> Temperatura de topire: 15,52
+		      <br> Raza atomului: 1,79
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ag</div>
+              <div class="denumire">ARGINT</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 47
+		      <br> Configuratie electronică: 5s1 4d10
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 107,87
+		      <br> Densitate: 10,5
+		      <br> Temperatura de topire: 961,9
+		      <br> Raza atomului: 1,75
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cd</div>
+              <div class="denumire">CADMIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 48
+		      <br> Configuratie electronică: 5s2 4d10
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,7
+		      <br> Masa atomică: 112,41
+		      <br> Densitate: 8,65
+		      <br> Temperatura de topire: 320,9
+		      <br> Raza atomului: 1,71
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">In</div>
+              <div class="denumire">INDIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 49
+		      <br> Configuratie electronică: 5s1 4d10 5p1
+		      <br> Număr de oxidare: 3;1
+		      <br> Electronegativitatea după Pauling: 1,7
+		      <br> Masa atomică: 114,82
+		      <br> Densitate: 7,31
+		      <br> Temperatura de topire: 157
+		      <br> Raza atomului: 2,00
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Sn</div>
+              <div class="denumire">STANIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 50
+		      <br> Configuratie electronică: 5s2 4d10 5p2
+		      <br> Număr de oxidare: 4;2
+		      <br> Electronegativitatea după Pauling: 1,8
+		      <br> Masa atomică: 118,71
+		      <br> Densitate: 7,31
+		      <br> Temperatura de topire: 232
+		      <br> Raza atomului: 1,72
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Sb</div>
+              <div class="denumire">STIBIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 51
+		      <br> Configuratie electronică: 5s1 4d10 5p2
+		      <br> Număr de oxidare: 5;3
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 121,76
+		      <br> Densitate: 6,648
+		      <br> Temperatura de topire: 630,74
+		      <br> Raza atomului: 1,53
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Te</div>
+              <div class="denumire">TELUR</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 52
+		      <br> Configuratie electronică:5s1 4d10 5p4
+		      <br> Număr de oxidare: 6;4;2
+		      <br> Electronegativitatea după Pauling: 2,1
+		      <br> Masa atomică: 127,60
+		      <br> Densitate: 6,24
+		      <br> Temperatura de topire: 450
+		      <br> Raza atomului: 1,42
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">I</div>
+              <div class="denumire">IOD</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 53
+		      <br> Configuratie electronică: 5s1 4d10 5p5
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 2,5
+		      <br> Masa atomică: 126,90
+		      <br> Densitate: 4,39
+		      <br> Temperatura de topire: 113,5
+		      <br> Raza atomului: 1,32
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_gazeRare">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Xe</div>
+              <div class="denumire">XENON</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 54
+		      <br> Configuratie electronică: 5s1 4d10 5p6
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 131,29
+		      <br> Densitate: 0,00588
+		      <br> Temperatura de topire: -111,82
+		      <br> Raza atomului: 1,24
+            </p>
+          </div>
+        </div>
+	  </td>
+	</tr>
+	<tr>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cs</div>
+              <div class="denumire">CESIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 55
+		      <br> Configuratie electronică: 6s1
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 0,7
+		      <br> Masa atomică: 132,91
+		      <br> Densitate: 1,873
+		      <br> Temperatura de topire: 28,4
+		      <br> Raza atomului: 3,34
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ba</div>
+              <div class="denumire">BARIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 56
+		      <br> Configuratie electronică: 6s2
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 0,9
+		      <br> Masa atomică: 137,33
+		      <br> Densitate: 3,51
+		      <br> Temperatura de topire: 7,25
+		      <br> Raza atomului: 2,78
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "noBorder"> </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Hf</div>
+              <div class="denumire">HAFNIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 72
+		      <br> Configuratie electronică: 6s2 4f14 5d2
+		      <br> Număr de oxidare: 4
+		      <br> Electronegativitatea după Pauling: 1,3
+		      <br> Masa atomică: 178,49
+		      <br> Densitate: 13,2
+		      <br> Temperatura de topire: 21,50
+		      <br> Raza atomului: 2,16
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ta</div>
+              <div class="denumire">TANTAL</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 73
+		      <br> Configuratie electronică: 6s2 4f14 5d3
+		      <br> Număr de oxidare: 5
+		      <br> Electronegativitatea după Pauling: 1,5
+		      <br> Masa atomică: 180,95
+		      <br> Densitate: 16,654
+		      <br> Temperatura de topire: 29,96
+		      <br> Raza atomului: 2,09
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">W</div>
+              <div class="denumire">WOLFRAM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 74
+		      <br> Configuratie electronică: 6s2 4f14 5d4
+		      <br> Număr de oxidare: 6;4
+		      <br> Electronegativitatea după Pauling: 1,7
+		      <br> Masa atomică: 183,84
+		      <br> Densitate: 19,3
+		      <br> Temperatura de topire: 34,04
+		      <br> Raza atomului: 2,02
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Re</div>
+              <div class="denumire">RENIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 75
+		      <br> Configuratie electronică: 6s2 4f14 5d5
+		      <br> Număr de oxidare: 7;4
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 186,21
+		      <br> Densitate: 21,59
+		      <br> Temperatura de topire: 31,80
+		      <br> Raza atomului: 1,97
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Os</div>
+              <div class="denumire">OSMIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 76
+		      <br> Configuratie electronică: 6s2 4f14 5d6
+		      <br> Număr de oxidare: 8;4
+		      <br> Electronegativitatea după Pauling: 2,2
+		      <br> Masa atomică: 190,23
+		      <br> Densitate: 22,5
+		      <br> Temperatura de topire: 30,45
+		      <br> Raza atomului: 1,92
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ir</div>
+              <div class="denumire">IRIDIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 77
+		      <br> Configuratie electronică: 6s2 4f14 5d7
+		      <br> Număr de oxidare: 4
+		      <br> Electronegativitatea după Pauling: 2,2
+		      <br> Masa atomică: 192,22
+		      <br> Densitate: 22,4
+		      <br> Temperatura de topire: 24,10
+		      <br> Raza atomului: 1,87
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Pt</div>
+              <div class="denumire">PLATINA</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 78
+		      <br> Configuratie electronică: 6s2 4f14 5d8
+		      <br> Număr de oxidare: 4;2
+		      <br> Electronegativitatea după Pauling: 2,2
+		      <br> Masa atomică: 195,08
+		      <br> Densitate: 21,45
+		      <br> Temperatura de topire: 17,72
+		      <br> Raza atomului: 1,53
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Au</div>
+              <div class="denumire">AUR</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 79
+		      <br> Configuratie electronică: 6s2 4f14 5d9
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 2,4
+		      <br> Masa atomică: 196,97
+		      <br> Densitate: 19,32
+		      <br> Temperatura de topire: 1064,4
+		      <br> Raza atomului: 1,79
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Hg</div>
+              <div class="denumire">MERCUR</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 80
+		      <br> Configuratie electronică: 6s2 4f14 5d10
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 200,59
+		      <br> Densitate: 13,456
+		      <br> Temperatura de topire: -38,85
+		      <br> Raza atomului: 1,76
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Tl</div>
+              <div class="denumire">TALIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 81
+		      <br> Configuratie electronică: 6s2 4f14 5d10 6p1
+		      <br> Număr de oxidare: 3;1
+		      <br> Electronegativitatea după Pauling: 1,8
+		      <br> Masa atomică: 204,38
+		      <br> Densitate: 11,85
+		      <br> Temperatura de topire: 303,5
+		      <br> Raza atomului: 2,08
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Pb</div>
+              <div class="denumire">PLUMB</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 82
+		      <br> Configuratie electronică: 6s2 4f14 5d10 6p2
+		      <br> Număr de oxidare: 4;2
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 207,2
+		      <br> Densitate: 11,34
+		      <br> Temperatura de topire: 327
+		      <br> Raza atomului: 1,81
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+        <div class="container">
+          <div class="tabel">
+            <div class="title">Bi</div>
+              <div class="denumire">BISMUT</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 83
+		      <br> Configuratie electronică: 6s2 4f14 5d10 6p2
+		      <br> Număr de oxidare: 5;3
+		      <br> Electronegativitatea după Pauling: 1,9
+		      <br> Masa atomică: 208,98
+		      <br> Densitate: 9,8
+		      <br> Temperatura de topire: 271,4
+		      <br> Raza atomului: 1,63
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Po</div>
+              <div class="denumire">POLONIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 84
+		      <br> Configuratie electronică: 6s2 4f14 5d10 6p4
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: 2,0
+		      <br> Masa atomică: 209
+		      <br> Densitate: 9,5
+		      <br> Temperatura de topire: 2,54
+		      <br> Raza atomului: 1,53
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_nemetale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">At</div>
+              <div class="denumire">ASTATIN</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 85
+		      <br> Configuratie electronică: 6s2 4f14 5d10 6p5
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: 2,2
+		      <br> Masa atomică: 210
+		      <br> Densitate: -
+		      <br> Temperatura de topire: 302
+		      <br> Raza atomului: 1,43
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_gazeRare">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Rn</div>
+              <div class="denumire">RADON</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 86
+		      <br> Configuratie electronică:  6s2 4f14 5d10 6p6
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 222
+		      <br> Densitate: 0,00973
+		      <br> Temperatura de topire: -71
+		      <br> Raza atomului: 1,34
+            </p>
+          </div>	
+        </div>
+	  </td>
+	</tr>
+	<tr>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Fr</div>
+              <div class="denumire">FRANCIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 87
+		      <br> Configuratie electronică: 7s1
+		      <br> Număr de oxidare: 1
+		      <br> Electronegativitatea după Pauling: 0,7
+		      <br> Masa atomică: 223
+		      <br> Densitate: -
+		      <br> Temperatura de topire: 27
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ra</div>
+              <div class="denumire">RADIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 88
+		      <br> Configuratie electronică: 7s2
+		      <br> Număr de oxidare: 2
+		      <br> Electronegativitatea după Pauling: 0,9
+		      <br> Masa atomică: 226
+		      <br> Densitate: 5
+		      <br> Temperatura de topire: 700
+		      <br> Raza atomului: 
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "noBorder"> </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Rf</div>
+              <div class="denumire">RUTHERFORDIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 104
+		      <br> Configuratie electronică: 7s2 5f14 6d2
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 261
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Db</div>
+              <div class="denumire">DUMBNIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 105
+		      <br> Configuratie electronică: 7s2 5f14 6d3
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 262
+		      <br> Densitate: - 
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului:  -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Sg</div>
+              <div class="denumire">SEABORGIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 106
+		      <br> Configuratie electronică: 7s2 5f14 6d4
+		      <br> Număr de oxidare: - 
+		      <br> Electronegativitatea după Pauling: - 
+		      <br> Masa atomică: 266
+		      <br> Densitate: - 
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Bh</div>
+              <div class="denumire">BOHRIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 107
+		      <br> Configuratie electronică: 7s2 5f14 6d5
+		      <br> Număr de oxidare: - 
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 264
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Hs</div>
+              <div class="denumire">HASSIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 108
+		      <br> Configuratie electronică: 7s2 5f14 6d6
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: - 
+		      <br> Masa atomică: 277
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Mt</div>
+              <div class="denumire">MEITNERIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 109
+		      <br> Configuratie electronică: 7s2 5f14 6d7
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 268
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ds</div>
+              <div class="denumire">DARMSTADTIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 110
+		      <br> Configuratie electronică: 7s2 5f14 6d8
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 271
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Rg</div>
+              <div class="denumire">ROENTGENIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 111
+		      <br> Configuratie electronică: 7s2 5f14 6d9
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 272
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cn</div>
+              <div class="denumire">COPERNICIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 112
+		      <br> Configuratie electronică: 7s2 5f14 6d10
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 285
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Uut</div>
+              <div class="denumire">UNUNTRIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 113
+		      <br> Configuratie electronică: 
+		      <br> Număr de oxidare:
+		      <br> Electronegativitatea după Pauling:
+		      <br> Masa atomică: 284
+		      <br> Densitate:
+		      <br> Temperatura de topire:
+		      <br> Raza atomului: 
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+        <div class="container">
+          <div class="tabel">
+            <div class="title">Uuq</div>
+              <div class="denumire">UNUNQUADIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 114
+		      <br> Configuratie electronică: -
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 289
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale"> 
+        <div class="container">
+          <div class="tabel">
+            <div class="title">Uup</div>
+              <div class="denumire">UNUNPENDIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 115
+		      <br> Configuratie electronică: -
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 288
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Uuh</div>
+              <div class="denumire">UNUNHEXIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 116
+		      <br> Configuratie electronică: -
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 293
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_metale">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Uus</div>
+              <div class="denumire">UNUNSEPTIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 117
+		      <br> Configuratie electronică: -
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: -
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_gazeRare">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Uuo</div>
+              <div class="denumire">UNUNOCTIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 118
+		      <br> Configuratie electronică: -
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 294
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	</tr>
+  </table>
+  <br>
+  <table>
+    <tr>
+	  <td colspan = "2" class = "noBorder"> </td>
+	  <td class = "culoare_LA">
+        <div class="container">
+          <div class="tabel">
+            <div class="title">La</div>
+              <div class="denumire">LANTAN</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 57
+		      <br> Configuratie electronică: 6s2 5d1
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,1 
+		      <br> Masa atomică: 138,91
+		      <br> Densitate: 6,16
+		      <br> Temperatura de topire: 920
+		      <br> Raza atomului: 2,74
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ce</div>
+              <div class="denumire">CERIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 58
+		      <br> Configuratie electronică: 6s2 4f2 5d1
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,1
+		      <br> Masa atomică: 140,12
+		      <br> Densitate: 6,773
+		      <br> Temperatura de topire: 798
+		      <br> Raza atomului: 2,70
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Pr</div>
+              <div class="denumire">PRASEODIM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 59
+		      <br> Configuratie electronică: 6s2 4f 
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,1
+		      <br> Masa atomică: 140,91
+		      <br> Densitate: 6,48
+		      <br> Temperatura de topire: 931
+		      <br> Raza atomului: 2,67
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Nd</div>
+              <div class="denumire">NEODIM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 60
+		      <br> Configuratie electronică: 6s2 4f4
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 144,24
+		      <br> Densitate: 6,8
+		      <br> Temperatura de topire: 1010
+		      <br> Raza atomului: 2,64
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Pm</div>
+              <div class="denumire">PROMETHIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 61
+		      <br> Configuratie electronică: 6s2 4f5
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 145
+		      <br> Densitate: 6,475
+		      <br> Temperatura de topire: 1080
+		      <br> Raza atomului: 2,64
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Sm</div>
+              <div class="denumire">SAMARIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 62
+		      <br> Configuratie electronică:  6s2 4f6
+		      <br> Număr de oxidare: 3;2
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 150,36
+		      <br> Densitate: 7,54
+		      <br> Temperatura de topire: 1072
+		      <br> Raza atomului: 2,59
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Eu</div>
+              <div class="denumire">EUROPIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 63
+		      <br> Configuratie electronică: 6s2 4f7
+		      <br> Număr de oxidare: 3;2
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 151,96
+		      <br> Densitate: 5,259
+		      <br> Temperatura de topire: 822
+		      <br> Raza atomului: 2,56
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Gd</div>
+              <div class="denumire">GADOLINIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 64
+		      <br> Configuratie electronică: 6s2 4f8 5d1
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,1
+		      <br> Masa atomică: 157,25
+		      <br> Densitate: 7,895
+		      <br> Temperatura de topire: 1312
+		      <br> Raza atomului: 2,54
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Tb</div>
+              <div class="denumire">TERBIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 65
+		      <br> Configuratie electronică: 6s2 4f9
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 158,93
+		      <br> Densitate: 8,27
+		      <br> Temperatura de topire: 1360
+		      <br> Raza atomului: 2,51
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Dy</div>
+              <div class="denumire">DYSPROSIUM</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 66
+		      <br> Configuratie electronică: 6s2 4f10
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 162,50
+		      <br> Densitate: 8,56
+		      <br> Temperatura de topire: 1409
+		      <br> Raza atomului: 2,49
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Ho</div>
+              <div class="denumire">HOLMIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 67
+		      <br> Configuratie electronică: 6s2 4f11
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 164,93
+		      <br> Densitate: 8,54
+		      <br> Temperatura de topire: 1470
+		      <br> Raza atomului: 2,47
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Er</div>
+              <div class="denumire">ERBIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 68
+		      <br> Configuratie electronică: 6s2 4f12
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 167,27
+		      <br> Densitate: 9,05
+		      <br> Temperatura de topire: 1522 
+		      <br> Raza atomului: 2,45
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Tm</div>
+              <div class="denumire">TULIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 69
+		      <br> Configuratie electronică: 6s2 4f13
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 168,93
+		      <br> Densitate: 9,231
+		      <br> Temperatura de topire: 1545
+		      <br> Raza atomului: 2,42
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Yb</div>
+              <div class="denumire">YTERBIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 70
+		      <br> Configuratie electronică: 6s2 4f13
+		      <br> Număr de oxidare: 3;2
+		      <br> Electronegativitatea după Pauling: 1,1
+		      <br> Masa atomică: 173,05
+		      <br> Densitate: 6,98
+		      <br> Temperatura de topire: 824
+		      <br> Raza atomului: 2,40
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Lu</div>
+              <div class="denumire">LUTETIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 71
+		      <br> Configuratie electronică: 5s2 4f14 5d1
+		      <br> Număr de oxidare: 3
+		      <br> Electronegativitatea după Pauling: 1,2
+		      <br> Masa atomică: 174,97
+		      <br> Densitate: 9,85
+		      <br> Temperatura de topire: 16,56
+		      <br> Raza atomului: 2,25
+            </p>
+          </div>
+        </div>
+	  </td>
+	</tr>
+	<tr>
+	  <td colspan = "2" class = "noBorder"> </td>
+	  <td class = "culoare_LA">
+        <div class="container">
+          <div class="tabel">
+            <div class="title">Ac</div>
+              <div class="denumire">ACTIUNIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 89
+		      <br> Configuratie electronică: 7s2 6d1 
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: 1,1
+		      <br> Masa atomică: 227
+		      <br> Densitate: 10,07
+		      <br> Temperatura de topire: 1047
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Th</div>
+              <div class="denumire">TORIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 90
+		      <br> Configuratie electronică: 7s2 6d2
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,3
+		      <br> Masa atomică: 232,04
+		      <br> Densitate: 11,72
+		      <br> Temperatura de topire: 17,50
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Pa</div>
+              <div class="denumire">PROTACTINIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 91
+		      <br> Configuratie electronică: 7s2 5f2 6p1
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,5
+		      <br> Masa atomică: 231,04
+		      <br> Densitate: 15,4
+		      <br> Temperatura de topire: 1554
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">U</div>
+              <div class="denumire">URANIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 92
+		      <br> Configuratie electronică: 7s2 5f3 6d3
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,7
+		      <br> Masa atomică: 238,03
+		      <br> Densitate: 18,95
+		      <br> Temperatura de topire: 1132,3
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA"> 
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Np</div>
+              <div class="denumire">NEPTUNIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 93
+		      <br> Configuratie electronică: 7s2 5f4 6d1 
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: 1,3
+		      <br> Masa atomică: 237
+		      <br> Densitate: 20,45
+		      <br> Temperatura de topire: 640
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Pu</div>
+              <div class="denumire">PLUTONIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 94
+		      <br> Configuratie electronică: 7s2 5f6
+		      <br> Număr de oxidare: 4;3
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 244
+		      <br> Densitate: 19,8
+		      <br> Temperatura de topire: 641
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Am</div>
+              <div class="denumire">AMERICIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 95
+		      <br> Configuratie electronică: 7s2 5f7 
+		      <br> Număr de oxidare:4;3
+		      <br> Electronegativitatea după Pauling: 1,3
+		      <br> Masa atomică: 243
+		      <br> Densitate: 13,6
+		      <br> Temperatura de topire: 394
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cm</div>
+              <div class="denumire">CURIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 96
+		      <br> Configuratie electronică: 7s2 5f7 6d1  
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 247
+		      <br> Densitate: 13,511
+		      <br> Temperatura de topire: 1340
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Bk</div>
+              <div class="denumire">BERKELIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 97
+		      <br> Configuratie electronică: 7s2 5f8
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 247
+		      <br> Densitate: -
+		      <br> Temperatura de topire: 986
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Cf</div>
+              <div class="denumire">CALIFORNIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 98
+		      <br> Configuratie electronică: 7s2 5f9 6d1
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 151
+		      <br> Densitate: -
+		      <br> Temperatura de topire: 900
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Es</div>
+              <div class="denumire">EINSTEINIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 99
+		      <br> Configuratie electronică: 7s2 5f11
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 252
+		      <br> Densitate: -
+		      <br> Temperatura de topire: 860
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Fm</div>
+              <div class="denumire">FERMIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 100
+		      <br> Configuratie electronică: 7s2 5f12
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 257
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Md</div>
+              <div class="denumire">MENDELEVIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 101
+		      <br> Configuratie electronică: 7s2 7f13
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 258
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">No</div>
+              <div class="denumire">NOBELIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 102
+		      <br> Configuratie electronică: 7s2 5f14
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 259
+		      <br> Densitate: - 
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+	  <td class = "culoare_LA">
+	    <div class="container">
+          <div class="tabel">
+            <div class="title">Lr</div>
+              <div class="denumire">LAWRENCIU</div>
+          </div>
+          <div class="content">
+            <p> Număr atomic: 103
+		      <br> Configuratie electronică: 7s2 5f14 6d1
+		      <br> Număr de oxidare: -
+		      <br> Electronegativitatea după Pauling: -
+		      <br> Masa atomică: 262
+		      <br> Densitate: -
+		      <br> Temperatura de topire: -
+		      <br> Raza atomului: -
+            </p>
+          </div>
+        </div>
+	  </td>
+   </tr>
+  </table
+ 
+			</div>
+		</div>
+	</div>
+	<script>
+    $('nav .button').click(function(){
+      $('nav .button span').toggleClass("rotate");
+    });
+      $('nav ul li .first').click(function(){
+        $('nav ul li .first span').toggleClass("rotate");
+      });
+      $('nav ul li .second').click(function(){
+        $('nav ul li .second span').toggleClass("rotate");
+      });
+	 
+      const td = document.querySelector("td");
+      td.onclick = function(){
+        this.classList.toggle("active");
+        
+      }
+    
+    </script>
+</body>
+</html>

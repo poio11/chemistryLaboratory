@@ -1,0 +1,219 @@
+
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <script src="jquery-2.1.4.js"></script>
+  <script src="particles.js"></script>
+  <link rel="shortcut icon" href="favicon.png" sizes="128x128">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	
+  <style>
+ /* ---- reseteaza ---- */ 
+ body{ 
+ margin:0; 
+ font:normal 75% Arial, Helvetica, sans-serif; 
+} 
+ canvas{ 
+ display: block; 
+ vertical-align: bottom; 
+} 
+ /* ---- particles.js container ---- */ 
+ #particles-js{ 
+   position:absolute; 
+   width: 100%; 
+   height: 100%; 
+   background-color: #000000; 
+   background-image: url(""); 
+   background-repeat: no-repeat; 
+   background-size: cover; 
+   background-position: 50% 50%; 
+} 
+
+ 
+
+
+ #stats{ 
+ border-radius: 3px 3px 0 0; 
+ overflow: hidden; } 
+ .count-particles{ 
+ border-radius: 0 0 3px 3px; 
+}
+
+.wrapper {
+	width: 1170px;
+	margin: 0 auto;
+}
+header {
+	height: 100px;
+	background: #262626;
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+}
+.logo {
+	width: 30%;
+	float: left;
+	line-height: 100px;
+}
+.logo a {
+	text-decoration: none;
+	font-size: 20px;
+	font-family: poppins;
+	color: #fff;
+	letter-spacing: 5px;
+}
+nav {
+	float: right;
+	line-height: 100px;
+}
+nav a {
+	text-decoration: none;
+	font-family: poppins;
+	letter-spacing: 4px;
+	font-size: 15px;
+	margin: 0 10px;
+	color: #fff;
+}
+
+.drop_down{
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  background: #262626;
+  width: 250px;
+  line-height: 40px;
+  padding: 8px 25px;
+  border-radius: 5px;
+}
+nav label{
+  letter-spacing: 4px;
+  font-size: 15px;
+  margin: 0 10px;
+  color: #fff;
+  font-family: poppins;
+  font-weight: 400;
+  display: inline;
+  cursor: pointer;
+}
+.button span{
+  float: right;
+  line-height: 40px;
+  transition: 0.5s;
+}
+.button span.rotate{
+  transform: rotate(-180deg);
+}
+nav ul{
+  position: absolute;
+  background: #262626;
+  list-style: none;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  display: none;
+}
+[id^=btn]:checked + ul{
+  display: block;
+}
+nav .menu:before{
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  background: #262626;
+  right: 20px;
+  top: -10px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+nav ul li{
+  line-height: 40px;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+nav ul li label{
+  font-size: 18px;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+}
+nav ul li a:hover,
+nav ul li label:hover{
+  color: cyan;
+}
+input{
+  display: none;
+}
+
+
+
+  </style>
+  </head>
+  
+  
+  
+  <body>
+  <div class="box-area">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+					<a href="Home.html">Laborator de buzunar</a>
+				</div>
+				<nav>
+					<a href="vase_ustensile.html">Instrumente de laborator</a>
+					<a href="tabel periodic.html">Tabel periodic</a> 
+				</nav>
+				<nav class = "drop_down">
+                  <label for="btn" class="button"> Tipuri de reacţii
+                    <span class="fas fa-caret-down"></span>
+                  </label>
+                  <input type="checkbox" id="btn">
+                  <ul class="menu">
+                    <li><a href="reactie_combinare.html" class = "rosu" >Reacţia de combinare</a></li>
+					<li><a href="reactie_substitutie.html">Reacţia de substituţie</a></li>
+					<li><a href="reactie_schimb.html">Reacţia de dublă substituţie</a></li>
+					<li><a href="reactie_descompunere.html">Reacţia de descompunere</a></li>
+				 </ul>
+               </nav>
+			</div>
+		</header>
+		
+		<div class="content-area">
+			<div class="wrapper">
+              <h2> Laborator de buzunar </h2>
+			  
+			</div>
+		</div>
+	</div>
+  <!-- particles.js container --> 
+  <div id="particles-js"></div> 
+ 
+  <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+  
+  
+  <script>
+  particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":803.9564401783317,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":446.6424667657398,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+  </script>
+  <script>
+    $('nav .button').click(function(){
+      $('nav .button span').toggleClass("rotate");
+    });
+      $('nav ul li .first').click(function(){
+        $('nav ul li .first span').toggleClass("rotate");
+      });
+      $('nav ul li .second').click(function(){
+        $('nav ul li .second span').toggleClass("rotate");
+      });
+    </script>
+  </body>
+</html>
